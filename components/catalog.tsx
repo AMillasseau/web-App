@@ -33,7 +33,7 @@ export default async function Table() {
       <p> Catalog </p>
         {games.map((game) => (
           <div className={style.catcard1}>
-              <img src={game.img} height={100}/>
+              <Image alt='' src={game.img} height={100}/>
             <div className={style.catcard1}>
             <p> {game.name}</p>
             <p> Disponibilité </p>
