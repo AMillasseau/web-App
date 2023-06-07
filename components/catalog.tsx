@@ -28,13 +28,11 @@ export default async function Table() {
   const { rows: games } = data
   const duration = Date.now() - startTime
 
-  return (
-    <>
-      
-    <div className=className={style.catdiv}>
+  return (      
+    <div className={style.catdiv}>
       <p> Catalog </p>
         {games.map((game) => (
-          <div style=className={style.catcard1}>
+          <div className={style.catcard1}>
               <img src={game.img} height={100}/>
             <div className={style.catcard1}>
             <p> {game.name}</p>
@@ -44,6 +42,5 @@ export default async function Table() {
           )
         )}
     </div>
-    </>
   )
 }
