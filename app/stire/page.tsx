@@ -15,3 +15,4 @@ return (<Suspense fallback={<div> Loading </div>}>
         <Ligne />
         </Suspense>
        )
+}
