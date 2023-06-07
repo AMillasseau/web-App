@@ -24,7 +24,7 @@ export default async function Table() {
     }
   }
 
-  const { rows: name } = data
+  const { rows: games } = data
   const duration = Date.now() - startTime
 
   return (
@@ -39,7 +39,7 @@ export default async function Table() {
         <RefreshButton />
       </div>
       <div className="divide-y divide-gray-900/5">
-        {gmaes.map((games) => (
+        {games.map((games) => (
           <div
             key={games.name}
             className="flex items-center justify-between py-3"
