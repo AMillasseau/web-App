@@ -29,7 +29,7 @@ export default function Home() {
 
       <div className={style.center}>
         
-        <Table />
+        
         
       </div>
 
