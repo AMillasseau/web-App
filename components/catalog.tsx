@@ -1,7 +1,6 @@
 import { sql } from '@vercel/postgres'
 import { timeAgo } from '@/lib/utils'
 import Image from 'next/image'
-import RefreshButton from './refresh-button'
 import { seed } from '@/lib/seed'
 
 import style from 'app/pages.modules.css'
@@ -30,31 +29,12 @@ export default async function Table() {
   const duration = Date.now() - startTime
 
   return (
-    <div className=
-     'display: inherit;
-	flex-direction: inherit;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	'>
+    <div className=className={style.catdiv}>
       <p> Catalog </p>
         {games.map((games) => (
-          <div style='
-	box-sizing: border-box;
-	width: 100%;
-	border: solid #5B6DCD 10px;
-	display: inherit;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
-	margin: 5px 0px;
-	bakground: red;
-	'>
+          <div style=className={style.catcard1}>
 <img src={games.img} height={100}/>
-            <div className='display: inherit;
-	              flex-direction: column;
-	              justify-content: center;
-	              align-items: center;'>
+            <div className={style.catcard1}>
             <p> {games.name}</p>
             <p> Disponibilité </p>
         </div> </div>
