@@ -72,6 +72,33 @@ align-items: inherit;
   align-self: start;
 }
 
+.catdiv {
+  display: inherit;
+	flex-direction: inherit;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.catcard1 {
+  box-sizing: border-box;
+	width: 100%;
+	border: solid #5B6DCD 10px;
+	display: inherit;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	margin: 5px 0px;
+	bakground: red;
+}
+
+.catcard2 {
+  display: inherit;
+  flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 .tail {
   background-color: lightblue;
   top:90%;
