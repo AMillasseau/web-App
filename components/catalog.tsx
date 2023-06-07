@@ -3,7 +3,7 @@ import { timeAgo } from '@/lib/utils'
 import Image from 'next/image'
 import { seed } from '@/lib/seed'
 
-import style from 'app/pages.modules.css'
+import style from '@/app/pages.modules.css'
 
 export default async function Table() {
   let data
