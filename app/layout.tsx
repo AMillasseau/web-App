@@ -7,12 +7,13 @@ const font1 = Secular_One({
 })
 
 export const metadata = {
-  title: 'Vercel Postgres Demo with Prisma',
-  description:
-    'A simple Next.js app with Vercel Postgres as the database and Prisma as the ORM',
+  title: 'Arena',
+  description: 'Arena\'s website',
+  author: 'Adrien Millasseau',
+  viewport: 'width=device-width, initial-scale=1.0',
 }
 
-
+ 
 export default function RootLayout({
   children,
 }: {
