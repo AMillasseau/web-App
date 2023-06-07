@@ -6,9 +6,7 @@ import style from 'app/page.module.css'
 export default function Home() {
   return (
     <div>
-    <script src="/scripts/send.js" type="text/javascript">
-  
-  </script>
+    
     <main className={style.main}>
   
       <div className={style.head}>
