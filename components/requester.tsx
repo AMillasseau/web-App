@@ -4,8 +4,9 @@ import Image from 'next/image'
 import RefreshButton from './refresh-button'
 import { seed } from '@/lib/seed'
 
-export default async function Table() {
-  let data
+export default async function Requester() {
+  return <div>Hello, I am a Requester component!</div>;
+  /*let data
   let startTime = Date.now()
 
   try {
@@ -61,5 +62,5 @@ export default async function Table() {
         ))}
       </div>
     </div>
-  )
+  )*/
 }
