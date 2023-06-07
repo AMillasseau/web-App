@@ -1,0 +1,93 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  min-height: 100vh;
+  max-width: var(--max-width);
+}
+
+.head {
+  background-color: lightblue;
+  top:0;
+  height: 20%;
+  position: fixed;
+  display: inherit;
+  flex-direction: row;
+  justify-content: inherit;
+  align-items: inherit;
+  font-size: 3rem;
+  max-width: var(--max-width);
+  width: 100%;
+  z-index: 2;
+  border-radius: 0 0 50% 50%;
+}
+
+.notwide{
+width:80%;
+display: inherit;
+flex-direction: row;
+justify-content: inherit;
+align-items: inherit;
+}
+
+.center {
+  width:80%;
+  display: inherit;
+  flex-direction: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  align-content: start;
+}
+
+.backarrow {
+  width:100%;
+  align-items: start;
+  padding-bottom: 40px;
+  z-index: 4;
+}
+
+.longtxt {
+  font-size: 1rem;
+}
+
+.ipt {
+  width:100%;
+  margin-bottom: 10px;
+  resize: none;
+  font-size: 2rem;
+}
+
+.txta {
+  width:100%;
+  margin-bottom: 10px;
+  resize: none;
+  font-size: 1rem;
+}
+
+.btn {
+  font-size: 2rem;
+  align-self: start;
+}
+
+.tail {
+  background-color: lightblue;
+  top:90%;
+  height: 10%;
+  position: fixed;
+  display: inherit;
+  flex-direction: row;
+  justify-content: inherit;
+  align-items: inherit;
+  font-size: 1rem;
+  max-width: var(--max-width);
+  width: 100%;
+  z-index: 2;
+  border-radius: 50% 50% 0 0;
+}
+
+.a:link { text-decoration: none; color:black;}
+.a:visited { text-decoration: none; color:black;}
+.a:hover { text-decoration: none; color:black;}
+.a:active { text-decoration: none; color:black;}
