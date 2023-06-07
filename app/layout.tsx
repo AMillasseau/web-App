@@ -1,5 +1,10 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import 'app/global.css'
+import { Secular_One } from 'next/font/google'
+
+const font1 = Secular_One({ 
+  subsets : ['latin'],
+  weight : '400',
+})
 
 export const metadata = {
   title: 'Vercel Postgres Demo with Prisma',
@@ -7,11 +12,6 @@ export const metadata = {
     'A simple Next.js app with Vercel Postgres as the database and Prisma as the ORM',
 }
 
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
-  display: 'swap',
-})
 
 export default function RootLayout({
   children,
