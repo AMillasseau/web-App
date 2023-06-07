@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Suspense } from 'react'
 import Catalog from '@/components/catalog'
 
-import style from 'app/page.module.css'
+import style from './page.module.css'
 
 export const runtime = 'edge'
 export const preferredRegion = 'home'
