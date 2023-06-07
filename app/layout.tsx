@@ -1,4 +1,4 @@
-import './global.css'
+
 import { Secular_One } from 'next/font/google'
 
 const font1 = Secular_One({ 
