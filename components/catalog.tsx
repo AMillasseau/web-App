@@ -4,6 +4,8 @@ import Image from 'next/image'
 import RefreshButton from './refresh-button'
 import { seed } from '@/lib/seed'
 
+import style from 'app/pages.modules.css'
+
 export default async function Table() {
   let data
   let startTime = Date.now()
@@ -28,38 +30,35 @@ export default async function Table() {
   const duration = Date.now() - startTime
 
   return (
-    <div className="bg-white/30 p-12 shadow-xl ring-1 ring-gray-900/5 rounded-lg backdrop-blur-lg max-w-xl mx-auto w-full">
-      <div className="flex justify-between items-center mb-4">
-        <div className="space-y-1">
-          <h2 className="text-xl font-semibold">Recent Users</h2>
-          <p className="text-sm text-gray-500">
-            Fetched {games.length} users in {duration}ms
-          </p>
-        </div>
-        <RefreshButton />
-      </div>
-      <div className="divide-y divide-gray-900/5">
+    <div className=
+     'display: inherit;
+	flex-direction: inherit;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	'>
+      <p> Catalog </p>
         {games.map((games) => (
-          <div
-            key={games.name}
-            className="flex items-center justify-between py-3"
-          >
-            <div className="flex items-center space-x-4">
-              <Image
-                src={games.image}
-                alt={games.name}
-                width={48}
-                height={48}
-                className="rounded-full ring-1 ring-gray-900/5"
-              />
-              <div className="space-y-1">
-                <p className="font-medium leading-none">{games.name}</p>
-                <p className="text-sm text-gray-500">{games.booked}</p>
-              </div>
-            </div>
-          </div>
+          <div style='
+	box-sizing: border-box;
+	width: 100%;
+	border: solid #5B6DCD 10px;
+	display: inherit;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	margin: 5px 0px;
+	bakground: red;
+	'>
+<img src={games.img} height={100}/>
+            <div className='display: inherit;
+	              flex-direction: column;
+	              justify-content: center;
+	              align-items: center;'>
+            <p> {games.name}</p>
+            <p> Disponibilité </p>
+        </div> </div>
         ))}
       </div>
-    </div>
   )
 }
