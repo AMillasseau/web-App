@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Suspense } from 'react'
-import Catalog from '@/components/catalog'
+import Table from '@/components/table'
 
 import style from './page.module.css'
 
@@ -29,7 +29,7 @@ export default function Home() {
 
       <div className={style.center}>
         
-        <Catalog/>
+        <Table />
         
       </div>
 
