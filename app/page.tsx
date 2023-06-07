@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Suspense } from 'react'
 import Table from '@/components/table'
+import TablePlaceholder from '@/components/tableplaceholder'
 
 import style from './page.module.css'
 
@@ -28,9 +29,9 @@ export default function Home() {
       </div>
 
       <div className={style.center}>
-        
+        <Suspense fallback={<TablePlaceholder />}>
         <Table />
-        
+        </Suspense>
       </div>
 
       <div className={style.tail}>
