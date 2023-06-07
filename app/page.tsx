@@ -29,7 +29,9 @@ export default function Home() {
       </div>
 
       <div className={style.center}>
+       
         <Suspense fallback={<TablePlaceholder />}>
+        {/* @ts-expect-error Async Server Component */}
         <Table />
         </Suspense>
       </div>
