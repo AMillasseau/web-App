@@ -30,7 +30,7 @@ export default function Home() {
               src="/backarrow.png"
               alt="Back"
               width={30}
-              height="auto"
+              /*height="auto"*/
               priority
             />
             </a>
