@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={font1.variable} style={"background: blue"}>{children}</body>
+      <body className={font1.className} style={"background: blue"}>{children}</body>
     </html>
   )
 }
