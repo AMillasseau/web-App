@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-
+import Requester from '@/components/requester'
 import style from 'app/page.module.css'
 
 export default function Home() {
@@ -37,12 +37,7 @@ export default function Home() {
             />
             </a>
           </div>
-          <form>
-          <input className={style.ipt} id="name" name="name" type="text" placeholder="Name" autocomplete="off" required/>
-          <input className={style.ipt} id="contact" name="contact" type="email" placeholder="Email contact"/>
-          <textarea className={style.txta} id="message" name="text" placeholder="Your message" autocomplete="off" rows="12" required></textarea>
-          <button className={style.btn} id="btn" onclick="send(document.getElementById('name').value,document.getElementById('contact').value,document.getElementById('message').value)"> Submit </button>
-          </form>
+          <Requester/>
       </div>
 
       <div className={style.tail}>
