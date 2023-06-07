@@ -29,7 +29,7 @@ export default async function Table() {
   const duration = Date.now() - startTime
 
   return (
-    <div>
+    <>
     <div className=className={style.catdiv}>
       <p> Catalog </p>
         {games.map((game) => (
@@ -43,6 +43,6 @@ export default async function Table() {
           )
         )}
     </div>
-    </div>
+    </>
   )
 }
