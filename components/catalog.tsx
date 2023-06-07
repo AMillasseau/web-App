@@ -30,6 +30,7 @@ export default async function Table() {
 
   return (
     <>
+      
     <div className=className={style.catdiv}>
       <p> Catalog </p>
         {games.map((game) => (
