@@ -1,12 +1,8 @@
+import style from 'app/page.module.css'
+
 export default function TablePlaceholder() {
   return (
-    <div className=
-     'display: inherit;
-	flex-direction: inherit;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	'>
+    <div className={style.catdiv}>
       <p> Catalog </p>
         
       <p> Loading </p>
