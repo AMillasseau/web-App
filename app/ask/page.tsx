@@ -4,6 +4,10 @@ import { Suspense } from 'react'
 import Requester from '@/components/requester'
 import style from 'app/page.module.css'
 
+export const runtime = 'edge'
+export const preferredRegion = 'home'
+export const dynamic = 'force-dynamic'
+
 export default function Home() {
   return (
     <div>
