@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Suspense } from 'react'
-import Table from '@/components/table'
+import Requester from '@/components/requester'
+import RequesterPlaceholder from '@/components/requester-placeholder'
 
 import style from 'app/page.module.css'
 
@@ -29,7 +30,10 @@ export default function Home() {
 
       <div className={style.center}>
         
-        
+        <Suspense fallback={<RequesterPlaceholder />}>
+        {/* @ts-expect-error Async Server Component */}
+        <Requester />
+        </Suspense>
         
       </div>
 
