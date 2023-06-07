@@ -2,7 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Suspense } from 'react'
 import Table from '@/components/table'
-import style from 'app/page.module.css'
+
+import style from './page.module.css'
 
 export const runtime = 'edge'
 export const preferredRegion = 'home'
@@ -10,8 +11,6 @@ export const dynamic = 'force-dynamic'
 
 export default function Home() {
   return (
-    <div>
-    
     <main className={style.main}>
   
       <div className={style.head}>
@@ -29,18 +28,9 @@ export default function Home() {
       </div>
 
       <div className={style.center}>
-          <div style={{paddingBottom: '10px'}} className={style.backarrow}>
-            <a href="../">
-            <Image 
-              src="/backarrow.png"
-              alt="Back"
-              width={30}
-              /*height="auto"*/
-              priority
-            />
-            </a>
-          </div>
-          <Table />
+        
+        <Table />
+        
       </div>
 
       <div className={style.tail}>
@@ -52,7 +42,5 @@ export default function Home() {
       </div>
     
       </main>
-      </div>
-      
-    )
+  )
 }
