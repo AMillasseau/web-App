@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Suspense } from 'react'
-import Table from '@/components/table'
-import TablePlaceholder from '@/components/table-placeholder'
+import Catalog from '@/components/catalog'
+import CatalogPlaceholder from '@/components/catalog-placeholder'
 
 import style from './page.module.css'
 
@@ -30,9 +30,9 @@ export default function Home() {
 
       <div className={style.center}>
        
-        <Suspense fallback={<TablePlaceholder />}>
+        <Suspense fallback={<CatalogPlaceholder />}>
         {/* @ts-expect-error Async Server Component */}
-        <Table />
+        <Catalog />
         </Suspense>
       </div>
 
