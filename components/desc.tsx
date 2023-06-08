@@ -13,9 +13,23 @@ function imag(url: string) {
 }
 
 async function dispo(d: boolean, name: string) {
+  const handleBooking = async () => {
+    try {
+      await booking(name);
+    } catch (error) {
+      console.error('Error occurred during booking:', error);
+    }
+  };
+
   if (d) {
-    return (<button type="button" disabled>Already booked</button>)}
-  else {return(<button type="button" onClick={(e:any) => booking(name)}>Book</button>)} 
+    return <button type="button" disabled>Already booked</button>;
+  } else {
+    return (
+      <React.Fragment>
+        <button type="button" onClick={handleBooking}>Book</button>
+      </React.Fragment>
+    );
+  }
 }
 
 async function booking(name: string){
