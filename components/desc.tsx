@@ -13,7 +13,7 @@ function imag(url: string) {
     return (<Image alt='' src={url} height={150}/>)}
 }
 
-async function dispo(d: boolean, name: string) {
+function dispo(d: boolean, name: string) {
   const handleBooking = async () => {
     try {
       await booking(name);
@@ -21,13 +21,12 @@ async function dispo(d: boolean, name: string) {
       console.error('Error occurred during booking:', error);
     }
   };
-let comp
+
   if (d) {
-    comp = (<button type="button" disabled>Already booked</button>);
+    return <button type="button" disabled>Already booked</button>;
   } else {
-    comp = (<button type="button" onClick={handleBooking}>Book</button>);
+    return <button type="button" onClick={handleBooking}>Book</button>;
   }
-  return comp;
 }
 
 async function booking(name: string){
