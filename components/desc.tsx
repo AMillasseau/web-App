@@ -40,9 +40,9 @@ export default async function Table({ name }: { name?: string }) {
   const { rows: games } = data
 
   return (      
-    <div className={style.catdiv}>
+    <div className={style.descdiv}>
         {games.map((game) => (
-          
+          <p>WIP</p>
         
           )
         )}
