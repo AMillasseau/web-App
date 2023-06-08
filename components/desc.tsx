@@ -21,16 +21,13 @@ async function dispo(d: boolean, name: string) {
       console.error('Error occurred during booking:', error);
     }
   };
-
+let comp:React
   if (d) {
-    return <button type="button" disabled>Already booked</button>;
+    comp = (<button type="button" disabled>Already booked</button>);
   } else {
-    return (
-      <React.Fragment>
-        <button type="button" onClick={handleBooking}>Book</button>
-      </React.Fragment>
-    );
+    comp = (<button type="button" onClick={handleBooking}>Book</button>);
   }
+  return comp;
 }
 
 async function booking(name: string){
