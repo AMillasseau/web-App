@@ -7,7 +7,7 @@ export default async function Requester() {
   return <div>Hello, I am a Requester component!</div>;
   let data
 
-  function send(name, contact, message){
+  function async send(name, contact, message){
   let query = sql`INSERT INTO messages (name, contact,message) VALUES (${name},${contact},${message})`
   try {
     data = await query
