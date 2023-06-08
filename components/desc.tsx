@@ -12,7 +12,7 @@ function imag(url: string) {
     return (<Image alt='' src={url} height={150}/>)}
 }
 
-function dispo(d: bool) {
+function dispo(d: boolean) {
   if (d) {
     return (<p> Already Booked </p>)}
   else {return(<p> Available </p>)} 
