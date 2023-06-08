@@ -10,7 +10,7 @@ export const runtime = 'edge'
 export const preferredRegion = 'home'
 export const dynamic = 'force-dynamic'
 
-export default function Home() {
+export default function Home({ params }: { params: { name: string } }) {
   return (
     <main className={style.main}>
   
