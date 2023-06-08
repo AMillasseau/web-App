@@ -9,12 +9,17 @@ function imag(url: string) {
   if (url == ''){
     return (<div> </div>)}
   else {
-    return (<Image alt='' src={"https://res.cloudinary.com/mattel-dtc-cloud/image/upload/w_900,h_900,c_pad/shop-emea-prod/products/nv0m1pbkeslskmnou5oo_92c67223-0b93-4c8b-bdec-220d1b6c0ea0.jpg?v=1663762653"} height={100}/>)}
+    return (<Image alt='' src={url} height={100}/>)}
+}
+
+function dispo(d: bool) {
+  if (d) {
+    return (<p> Already Booked </p>)}
+  else {return(<p> Available </p>)}
 }
 
 export default async function Table() {
   let data
-  let startTime = Date.now()
 
   try {
     data = await sql`SELECT * FROM games`
@@ -33,7 +38,6 @@ export default async function Table() {
   }
 
   const { rows: games } = data
-  const duration = Date.now() - startTime
 
   return (      
     <div className={style.catdiv}>
@@ -42,8 +46,8 @@ export default async function Table() {
           <div key={game.name} className={style.catcard1}>
               {imag(game.img)}
             <div className={style.catcard2}>
-            <p> Nom : {game.name} </p>
-            <p> Disponibilité </p>
+            <p> {game.name} </p>
+              {dispo(game.booked)}
             </div> 
           </div>
           )
