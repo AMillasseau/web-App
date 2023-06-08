@@ -19,6 +19,7 @@ async function dispo(d: boolean, name: string) {
 }
 
 async function booking(name: string){
+  let data
   let query = sql`UPDATE games SET booked = true WHERE name = ${name}`
   try {
     data = await query
