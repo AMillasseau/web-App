@@ -32,7 +32,7 @@ export default async function Table() {
     <div className={style.catdiv}>
       <p> Catalog </p>
         {games.map((game) => (
-          <div className={style.catcard1}>
+          <div key={game.name} className={style.catcard1}>
               <Image alt='' src={game.img} height={100}/>
             <div className={style.catcard1}>
             <p> {game.name}</p>
