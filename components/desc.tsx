@@ -6,7 +6,7 @@ import React from 'react';
 
 import style from '@/app/page.module.css'
 
-function imag(url: string) {
+function imag(url: string) { 
   if (url == ''){
     return (<div> </div>)}
   else {
