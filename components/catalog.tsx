@@ -30,7 +30,6 @@ export default async function Table() {
       )
       // Table is not created yet
       await seed()
-      startTime = Date.now()
       data = await sql`SELECT * FROM games`
     } else {
       throw e
