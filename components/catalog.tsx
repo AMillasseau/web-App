@@ -30,7 +30,7 @@ export default async function Table() {
 
   return (      
     <div className={style.catdiv}>
-      <p> Catalog </p>
+      <p> Catalog  </p>
         {games.map((game) => (
           <div key={1} className={style.catcard1}>
               <Image alt='' src='https://animemusicquiz.com/img/ui/currency/Icon_Normal.svg' height={100}/>
