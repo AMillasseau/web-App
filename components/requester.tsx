@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { seed } from '@/lib/seed'
 
 export default async function Requester() {
-  return <div>Hello, I am a Requester component!</div>;
+
   let data
 
   async function send(name: string, contact: string, message: string){
