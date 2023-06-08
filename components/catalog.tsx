@@ -5,7 +5,7 @@ import { seed } from '@/lib/seed'
 
 import style from '@/app/page.module.css'
 
-function imag(url) {
+function imag(url: string) {
   if (url == ''){
     return (<div> </div>)}
   else {
