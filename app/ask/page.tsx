@@ -30,7 +30,7 @@ export default function Home() {
 
       <div className={style.center}>
         
-        <Suspense fallback={<p> Loading <p />}>
+        <Suspense fallback={<p> Loading </p>}>
         {/* @ts-expect-error Async Server Component */}
         <Requester />
         </Suspense>
@@ -45,6 +45,6 @@ export default function Home() {
         </div>
       </div>
     
-      </main>
+    </main>
   )
 }
