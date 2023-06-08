@@ -54,7 +54,7 @@ export default async function Requester() {
     const messageInput = document.getElementById('message');
 
     if (nameInput && contactInput && messageInput) {
-      send(nameInput.value, contactInput.value, messageInput.value);
+      send(nameInput.innerhtml, contactInput.innerhtml, messageInput.innerhtml);
     }
   }}
 >
