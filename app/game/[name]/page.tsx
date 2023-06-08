@@ -29,7 +29,7 @@ export default function Home({ params }: { params: { name: string } }) {
       </div>
 
       <div className={style.center}>
-       
+    
         <Suspense fallback={<p> Loading </p>}>
         {/* @ts-expect-error Async Server Component */}
         <Desc />
