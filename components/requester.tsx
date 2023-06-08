@@ -37,7 +37,7 @@ export default async function Requester() {
               src="/backarrow.png"
               alt="Back"
               width={30}
-              height="auto"
+              
               priority
             />
             </a>
