@@ -42,8 +42,9 @@ export default async function Table({ name }: { name?: string }) {
   return (      
     <div className={style.descdiv}>
         {games.map((game) => (
+        <div key={game.name} className={style.deschead}>
           <p>WIP</p>
-        
+        </div>
           )
         )}
     </div>
