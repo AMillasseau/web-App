@@ -41,7 +41,7 @@ export default async function Table() {
  
   return (      
     <div className={style.catdiv}>
-      <p> Catalog  </p>
+      <p className={style.bigtxt}> Catalog  </p>
         {games.map((game) => (
           <div key={game.name} className={style.catcard1}>
               {imag(game.img)}
