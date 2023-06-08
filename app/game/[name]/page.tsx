@@ -4,7 +4,7 @@ import { Suspense } from 'react'
 import Desc from '@/components/desc'
 import DescPlaceholder from '@/components/desc-placeholder'
 
-import style from './page.module.css'
+import style from '@/app/page.module.css'
 
 export const runtime = 'edge'
 export const preferredRegion = 'home'
