@@ -3,6 +3,8 @@ import { timeAgo } from '@/lib/utils'
 import Image from 'next/image'
 import { seed } from '@/lib/seed'
 
+import style from '@/app/page.module.css'
+
 export default async function Requester() {
 
   let data
