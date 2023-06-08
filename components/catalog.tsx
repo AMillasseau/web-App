@@ -31,11 +31,11 @@ export default async function Table() {
   return (      
     <div className={style.catdiv}>
       <p> Catalog </p>
-        {games.map((game) => (
-          <div key={game.name} className={style.catcard1}>
-              <Image alt='' src={game.img} height={100}/>
+        {/*games.map((game) => (*/
+          <div /*key={game.name}*/ className={style.catcard1}>
+              <!--<Image alt='' src={game.img} height={100}/>-->
             <div className={style.catcard2}>
-            <p> {game.name}</p>
+           <!-- <p> {game.name}</p> -->
             <p> Disponibilité </p>
             </div> 
           </div>
