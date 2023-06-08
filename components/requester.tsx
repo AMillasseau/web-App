@@ -5,7 +5,7 @@ import { seed } from '@/lib/seed'
 
 export default async function Requester() {
   return <div>Hello, I am a Requester component!</div>;
-  /*let data
+  let data
 
   function send(name, contact, message){
   let query = sql`INSERT INTO messages (name, contact,message) VALUES (${name},${contact},${message})`
@@ -47,5 +47,5 @@ export default async function Requester() {
           <button className={style.btn} id="btn" onclick="send(document.getElementById('name').value,document.getElementById('contact').value,document.getElementById('message').value)"> Submit </button>
           
     </div>
-  )*/
+  )
 }
