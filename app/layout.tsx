@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" style={"background: blue"}>
       <body className={font1.className}>{children}</body>
     </html>
   )
