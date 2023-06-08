@@ -15,7 +15,7 @@ function imag(url: string) {
 async function dispo(d: boolean, name: string) {
   if (d) {
     return (<button type="button" disabled>Already booked</button>)}
-  else {return(<button type="button" onClick="booking(name)">Book</button>)} 
+  else {return(<button type="button" onClick={booking(name)}>Book</button>)} 
 }
 
 async function booking(name: string){
