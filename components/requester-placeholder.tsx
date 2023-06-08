@@ -3,7 +3,7 @@ import { timeAgo } from '@/lib/utils'
 import Image from 'next/image'
 import { seed } from '@/lib/seed'
 
-export default async function Requester() {
+export default function Requester() {
   return <div>Hello, I am a Requester placeholder component!</div>;
   /*let data
   let startTime = Date.now()
