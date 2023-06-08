@@ -5,6 +5,13 @@ import { seed } from '@/lib/seed'
 
 import style from '@/app/page.module.css'
 
+function img(url) {
+  if (url == ''){
+    return (<div> </div>)}
+  else {
+    return (<Image alt='' src={url} height={100}/>)}
+}
+
 export default async function Table() {
   let data
   let startTime = Date.now()
@@ -33,7 +40,8 @@ export default async function Table() {
       <p> Catalog  </p>
         {games.map((game) => (
           <div key={1} className={style.catcard1}>
-              <Image alt='' src='https://animemusicquiz.com/img/ui/currency/Icon_Normal.svg' height={100}/>
+              <!--<Image alt='' src='https://animemusicquiz.com/img/ui/currency/Icon_Normal.svg' height={100}/>-->
+              {img(game.img)}
             <div className={style.catcard2}>
             <p> Nom : {game.name} </p>
             <p> Disponibilité </p>
