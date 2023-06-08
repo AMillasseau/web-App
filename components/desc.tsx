@@ -20,9 +20,9 @@ function dispo(d: bool) {
 
 export default async function Table({ name }: { name?: string }) {
   let data
-
+  let query = sql`SELECT * FROM games WHERE name = '${name}' LIMIT 1; `;
   try {
-    data = await sql`SELECT * FROM games`
+    data = await query;
   } catch (e: any) {
     if (e.message === `relation "games" does not exist`) {
       console.log(
@@ -31,7 +31,7 @@ export default async function Table({ name }: { name?: string }) {
       // Table is not created yet
       await seed()
       startTime = Date.now()
-      data = await sql`SELECT * FROM games`
+      data = await query
     } else {
       throw e
     }
@@ -41,15 +41,9 @@ export default async function Table({ name }: { name?: string }) {
 
   return (      
     <div className={style.catdiv}>
-      <p> Catalog  </p>
         {games.map((game) => (
-          <div key={game.name} className={style.catcard1}>
-              {imag(game.img)}
-            <div className={style.catcard2}>
-            <p> {game.name} </p>
-              {dispo(game.booked)}
-            </div> 
-          </div>
+          
+        
           )
         )}
     </div>
