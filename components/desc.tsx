@@ -47,8 +47,9 @@ export default async function Table({ name }: { name?: string }) {
           <div className={style.catcar2}>
             <p> {game.name} </p>
             <p> {dispo(game.booked)} </p>
-        </div> </div>
-        <p> {game.description)} </p>
+          </div> 
+        </div>
+        <p> {game.description} </p>
           )
         )}
     </div>
