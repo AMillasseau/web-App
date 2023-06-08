@@ -42,13 +42,15 @@ export default async function Table() {
     <div className={style.catdiv}>
       <p className={style.bigtxt}> Catalog  </p>
         {games.map((game) => (
-          <div key={game.name} className={style.catcard1}>
+          <a key={game.name} href={"/game/"+game.name}>
+          <div className={style.catcard1}>
               {imag(game.img)}
             <div className={style.catcard2}>
             <p> {game.name} </p>
               {dispo(game.booked)}
             </div> 
-          </div>
+          </div> 
+          </a>
           )
         )}
     </div>
