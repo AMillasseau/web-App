@@ -2,6 +2,7 @@ import { sql } from '@vercel/postgres'
 import { timeAgo } from '@/lib/utils'
 import Image from 'next/image'
 import { seed } from '@/lib/seed'
+import React from 'react'
 
 import style from '@/app/page.module.css'
 
