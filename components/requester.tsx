@@ -7,10 +7,11 @@ import { seed } from '@/lib/seed'
 export default async function Requester() {
   return <div>Hello, I am a Requester component!</div>;
   /*let data
-  let startTime = Date.now()
 
+  function send(name, contact, message){
+  let query = sql`INSERT INTO messages (name, contact,message) VALUES (${name},${contact},${message})`
   try {
-    data = await sql`SELECT * FROM games`
+    data = await query
   } catch (e: any) {
     if (e.message === `relation "games" does not exist`) {
       console.log(
@@ -18,49 +19,34 @@ export default async function Requester() {
       )
       // Table is not created yet
       await seed()
-      startTime = Date.now()
-      data = await sql`SELECT * FROM games`
+      data = await query
     } else {
       throw e
     }
   }
+  }
+  
 
-  const { rows: name } = data
-  const duration = Date.now() - startTime
 
   return (
-    <div className="bg-white/30 p-12 shadow-xl ring-1 ring-gray-900/5 rounded-lg backdrop-blur-lg max-w-xl mx-auto w-full">
-      <div className="flex justify-between items-center mb-4">
-        <div className="space-y-1">
-          <h2 className="text-xl font-semibold">Recent Users</h2>
-          <p className="text-sm text-gray-500">
-            Fetched {games.length} users in {duration}ms
-          </p>
-        </div>
-        <RefreshButton />
-      </div>
-      <div className="divide-y divide-gray-900/5">
-        {gmaes.map((games) => (
-          <div
-            key={games.name}
-            className="flex items-center justify-between py-3"
-          >
-            <div className="flex items-center space-x-4">
-              <Image
-                src={games.image}
-                alt={games.name}
-                width={48}
-                height={48}
-                className="rounded-full ring-1 ring-gray-900/5"
-              />
-              <div className="space-y-1">
-                <p className="font-medium leading-none">{games.name}</p>
-                <p className="text-sm text-gray-500">{games.booked}</p>
-              </div>
-            </div>
+    <div>
+    <div style={{paddingBottom: '10px'}} className={style.backarrow}>
+            <a href="../">
+            <Image 
+              src="/backarrow.png"
+              alt="Back"
+              width={30}
+              height="auto"
+              priority
+            />
+            </a>
           </div>
-        ))}
-      </div>
+          
+          <input className={style.ipt} id="name" name="name" type="text" placeholder="Name" autocomplete="off" required/>
+          <input className={style.ipt} id="contact" name="contact" type="email" placeholder="Email contact"/>
+          <textarea className={style.txta} id="message" name="text" placeholder="Your message" autocomplete="off" rows="12" required></textarea>
+          <button className={style.btn} id="btn" onclick="send(document.getElementById('name').value,document.getElementById('contact').value,document.getElementById('message').value)"> Submit </button>
+          
     </div>
   )*/
 }
