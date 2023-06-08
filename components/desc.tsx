@@ -47,7 +47,7 @@ export default async function Table({ name }: { name?: string }) {
           {imag(game.img)}
           <div className={style.catcar2}>
             <p> {game.name} </p>
-            <p> {dispo(game.booked)} </p>
+             {dispo(game.booked)}
           </div> 
         </div>
         <p> {game.description} </p>
