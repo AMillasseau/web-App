@@ -15,7 +15,7 @@ function imag(url: string) {
 function dispo(d: bool) {
   if (d) {
     return (<p> Already Booked </p>)}
-  else {return(<p> Available </p>)}
+  else {return(<p> Available </p>)} 
 }
 
 export default async function Table({ name }: { name?: string }) {
