@@ -1,4 +1,4 @@
-
+import style from '@/app/page.module.css'
 import { Secular_One } from 'next/font/google'
 
 const font1 = Secular_One({ 
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" style={"background: blue"}>
+    <html lang="en" className={style.htmlbcg}>
       <body className={font1.className}>{children}</body>
     </html>
   )
