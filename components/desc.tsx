@@ -21,7 +21,7 @@ async function dispo(d: boolean, name: string) {
       console.error('Error occurred during booking:', error);
     }
   };
-let comp:React
+let comp
   if (d) {
     comp = (<button type="button" disabled>Already booked</button>);
   } else {
