@@ -38,7 +38,7 @@ export default async function Table() {
   }
 
   const { rows: games } = data
-
+ 
   return (      
     <div className={style.catdiv}>
       <p> Catalog  </p>
