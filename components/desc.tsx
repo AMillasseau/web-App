@@ -30,7 +30,7 @@ export default async function Table({ name }: { name?: string }) {
       )
       // Table is not created yet
       await seed()
-      startTime = Date.now()
+
       data = await query
     } else {
       throw e
