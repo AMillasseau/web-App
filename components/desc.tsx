@@ -9,7 +9,7 @@ function imag(url: string) {
   if (url == ''){
     return (<div> </div>)}
   else {
-    return (<Image alt='' src={url} height={100}/>)}
+    return (<Image alt='' src={url} height={150}/>)}
 }
 
 function dispo(d: bool) {
@@ -43,8 +43,12 @@ export default async function Table({ name }: { name?: string }) {
     <div className={style.descdiv}>
         {games.map((game) => (
         <div key={game.name} className={style.deschead}>
-          <p>WIP</p>
-        </div>
+          {imag(game.img)}
+          <div className={style.catcar2}>
+            <p> {game.name} </p>
+            <p> {dispo(game.booked)} </p>
+        </div> </div>
+        <p> {game.description)} </p>
           )
         )}
     </div>
