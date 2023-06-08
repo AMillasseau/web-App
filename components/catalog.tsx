@@ -9,7 +9,7 @@ function imag(url: string) {
   if (url == ''){
     return (<div> </div>)}
   else {
-    return (<Image alt='' src={url} height={100}/>)}
+    return (<Image alt='' src={"https://res.cloudinary.com/mattel-dtc-cloud/image/upload/w_900,h_900,c_pad/shop-emea-prod/products/nv0m1pbkeslskmnou5oo_92c67223-0b93-4c8b-bdec-220d1b6c0ea0.jpg?v=1663762653"} height={100}/>)}
 }
 
 export default async function Table() {
