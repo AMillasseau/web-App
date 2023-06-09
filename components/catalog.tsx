@@ -42,10 +42,7 @@ function Dispo({ booked, name }: { booked: boolean; name: string }) {
 }
 
 export default function Table() {
-  const [games, setGames] = React.useState([]);
-
-  React.useEffect(() => {
-    async function fetchData() {
+   
       let data;
 
       try {
@@ -65,10 +62,8 @@ export default function Table() {
 
       const { rows: games } = data;
       
-    }
+    
 
-    fetchData();
-  }, []);
 
   return (
     <div className={style.catdiv}>
