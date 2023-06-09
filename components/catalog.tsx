@@ -73,7 +73,7 @@ export default async function Table() {
           <Imag url={game.img} />
           <div className={style.catcard2}>
             <p>{game.name}</p>
-            <Dispo booked={game.booked} name={game.name} />
+            <><Dispo booked={game.booked} name={game.name} /></>
             <p>{game.description}</p>
           </div>
         </div>
