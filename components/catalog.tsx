@@ -13,11 +13,24 @@ function imag(url: string) {
     return (<Image alt='' src={url} height={100}/>)}
 }
 
-function dispo(d: boolean) {
-  if (d) {
-    return (<p> Already Booked </p>)}
-  else {return(<p> Available </p>)}
-}
+async function booking(name: string){
+  let data
+  let query = sql`UPDATE games SET booked = true WHERE name = ${name}`
+  try {
+    data = await query
+  } catch (e: any) {
+    if (e.message === `relation "games" does not exist`) {
+      console.log(
+        'Table does not exist, creating and seeding it with dummy data now...'
+      )
+      // Table is not created yet
+      await seed()
+      data = await query
+    } else {
+      throw e
+    }
+  }
+  }
 
 export default async function Table() {
   let data
@@ -46,8 +59,9 @@ export default async function Table() {
           <div key={game.name} className={style.catcard1}>
               {imag(game.img)}
             <div className={style.catcard2}>
-            <a href={"/game/"+game.name}> {game.name} </a>
+            <p> {game.name} </p>
               {dispo(game.booked)}
+              <p> {game.description} </p>
             </div> 
           </div> 
           )
