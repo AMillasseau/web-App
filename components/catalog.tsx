@@ -45,7 +45,7 @@ function Dispo({ booked, name }: { booked: boolean; name: string }) {
 }
 
 export default async function Table() {
-   const connectionString = process.env.POSTGRES_URL;
+   const connectionString = "Server=ep-proud-field-232095-pooler.us-east-1.postgres.vercel-storage.com;Database=verceldb;User Id=default;Password=oTM3KYNDsWk5;";
       let data;
 
       try {
