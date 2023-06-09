@@ -14,7 +14,7 @@ function Imag({ url }: { url: string }) {
   }
 }
 
-function Dispo({ booked, name }: { booked: boolean; name: string }) {
+async function Dispo({ booked, name }: { booked: boolean; name: string }) {
   const handleBooking = async () => {
     let data;
     let query = sql`UPDATE games SET booked = true WHERE name = ${name}`;
