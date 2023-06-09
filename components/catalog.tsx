@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+// Table Client Component
+
+import React from 'react';
 import { sql } from '@vercel/postgres';
 import { seed } from '@/lib/seed';
 import Image from 'next/image';
@@ -40,9 +42,9 @@ function Dispo({ booked, name }: { booked: boolean; name: string }) {
 }
 
 export default function Table() {
-  const [games, setGames] = useState<any[]>([]);
+  const [games, setGames] = React.useState([]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     async function fetchData() {
       let data;
 
@@ -61,8 +63,8 @@ export default function Table() {
         }
       }
 
-      const { rows } = data;
-      setGames(rows);
+      const { rows: games } = data;
+      
     }
 
     fetchData();
@@ -71,7 +73,7 @@ export default function Table() {
   return (
     <div className={style.catdiv}>
       <p className={style.bigtxt}>Catalog</p>
-      {games.map((game) => (
+      {games.map((game: any) => (
         <div key={game.name} className={style.catcard1}>
           <Imag url={game.img} />
           <div className={style.catcard2}>
