@@ -15,22 +15,7 @@ function imag(url: string) {
 
 function dispo(d: boolean, name: string) {
   const handleBooking = async () => {
-    try {
-      await booking(name);
-    } catch (error) {
-      console.error('Error occurred during booking:', error);
-    }
-  };
-
-  if (d) {
-    return <button type="button" disabled>Already booked</button>;
-  } else {
-    return <button type="button" onClick={handleBooking}>Book</button>;
-  }
-}
-
-async function booking(name: string){
-  let data
+    let data
   let query = sql`UPDATE games SET booked = true WHERE name = ${name}`
   try {
     data = await query
@@ -46,7 +31,15 @@ async function booking(name: string){
       throw e
     }
   }
+  };
+
+  if (d) {
+    return <button type="button" disabled>Already booked</button>;
+  } else {
+    return <button type="button" onClick={handleBooking}>Book</button>;
   }
+}
+
 
 export default async function Table() {
   let data
