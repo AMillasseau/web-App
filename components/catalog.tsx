@@ -41,7 +41,7 @@ async function Dispo({ booked, name }: { booked: boolean; name: string }) {
   }
 }
 
-export default function Table() {
+export default async function Table() {
    
       let data;
 
