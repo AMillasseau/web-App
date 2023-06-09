@@ -31,7 +31,7 @@ export default function Home() {
       <div className={style.center}>
        
         <Suspense fallback={<CatalogPlaceholder />}>
-        {/* Async Server Component */}
+        {/* @ts-expect-error Async Server Component */}
         <Catalog />
         </Suspense>
       </div>
