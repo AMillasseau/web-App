@@ -44,7 +44,7 @@ function Dispo({ booked, name }: { booked: boolean; name: string }) {
 }
 
 export default async function Table() {
-   
+   const connectionString = process.env.POSTGRES_URL;
       let data;
 
       try {
