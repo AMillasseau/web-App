@@ -52,7 +52,7 @@ async function booking(name: string){
 export default async function Table({ params: { name } }: { params: { name: string } }) {
 
   let data
-  let query = sql`SELECT * FROM games WHERE name = ${name} LIMIT 1`;
+  let query = sql`SELECT * FROM games WHERE name = \'${name}\' LIMIT 1`;
   try {
     data = await query;
   } catch (e: any) {
