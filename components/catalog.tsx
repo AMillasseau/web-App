@@ -1,7 +1,7 @@
 // Table Client Component
 
 
-'use client';
+
 import React from 'react';
 import { sql } from '@vercel/postgres';
 import { seed } from '@/lib/seed';
@@ -18,7 +18,11 @@ function Imag({ url }: { url: string }) {
 
 function Dispo({ booked, name }: { booked: boolean; name: string }) {
   const connectionString = process.env.POSTGRES_URL;
-  const handleBooking = async () => {
+
+  if (booked) {
+    return <button type="button" disabled>Already booked</button>;
+  } else {
+    return <button type="button" onClick={async () => {
     let data;
     let query = sql`UPDATE games SET booked = true WHERE name = ${name}`;
     try {
@@ -35,12 +39,7 @@ function Dispo({ booked, name }: { booked: boolean; name: string }) {
         throw e;
       }
     }
-  };
-
-  if (booked) {
-    return <button type="button" disabled>Already booked</button>;
-  } else {
-    return <button type="button" onClick={handleBooking}>Book</button>;
+  };}>Book</button>;
   }
 }
 
