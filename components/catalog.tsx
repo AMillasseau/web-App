@@ -16,7 +16,7 @@ function Imag({ url }: { url: string }) {
 }
 
 function Dispo({ booked, name }: { booked: boolean; name: string }) {
-  const connectionString = process.env.POSTGRES_URL;
+  const connectionString = process.env.NEXT_PUBLIC_POSTGRES_URL;
 
   if (booked) {
     return <button type="button" disabled>Already booked</button>;
