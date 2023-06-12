@@ -7,8 +7,7 @@ import { seed } from '@/lib/seed';
 import Image from 'next/image';
 import style from '@/app/page.module.css';
 
-import { PrismaClient } from '@prisma/client'
-const prisma = new PrismaClient()
+require('dotenv').config();
 
 function Imag({ url }: { url: string }) {
   if (url === '') {
@@ -18,16 +17,27 @@ function Imag({ url }: { url: string }) {
   }
 }
 
-function Dispo({ booked, bid }: { booked: boolean; bid: float }) {
-  
+function Dispo({ booked, name }: { booked: boolean; name: string }) {
+  const connectionString = process.env.NEXT_PUBLIC_POSTGRES_URL;
+
   if (booked) {
     return <button type="button" disabled>Already booked</button>;
   } else {
     return (<><button type="button" onClick={async () => {
-            const user = await prisma.games.findUnique({where: {id: bid,},});
-            user.booked = true;
-            const updatedUser = await prisma.games.update({where: {id: user.id,},data: {name: user.name,},});
-          }}>Book</button></>);
+    let data;
+    let query = sql`UPDATE games SET booked = true WHERE name = ${name}`;
+    try {data = await query;}
+    catch (e: any) {
+      if (e.message === `relation "games" does not exist`) {
+        console.log(
+          'Table does not exist, creating and seeding it with dummy data now...'
+        );
+        // Table is not created yet
+        await seed();
+        data = await query;
+      } else {throw e;}
+    }
+  }}>Book</button></>);
   }
 }
 
@@ -36,9 +46,22 @@ export default async function Table() {
    const connectionString = "Server=ep-proud-field-232095-pooler.us-east-1.postgres.vercel-storage.com;Database=verceldb;User Id=default;Password=oTM3KYNDsWk5;";
       let data;
 
-      const users = await prisma.games.findMany();
+      try {
+        data = await sql`SELECT * FROM games`;
+      } catch (e: any) {
+        if (e.message === `relation "games" does not exist`) {
+          console.log(
+            'Table does not exist, creating and seeding it with dummy data now...'
+          );
+          // Table is not created yet
+          await seed();
+          data = await sql`SELECT * FROM games`;
+        } else {
+          throw e;
+        }
+      }
 
-      const { rows: games } = users;
+      const { rows: games } = data;
       
     
 
@@ -51,7 +74,7 @@ export default async function Table() {
           <Imag url={game.img} />
           <div className={style.catcard2}>
             <p>{game.name}</p>
-            <><Dispo booked={game.booked} name={game.id} /></>
+            <><Dispo booked={game.booked} name={game.name} /></>
             <p>{game.description}</p>
           </div>
         </div>
