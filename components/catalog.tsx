@@ -22,7 +22,7 @@ function Dispo({ booked, name }: { booked: boolean; name: string }) {
   if (booked) {
     return <button type="button" disabled>Already booked</button>;
   } else {
-    return <button type="button" onClick={async () => {
+    return (<><button type="button" onClick={async () => {
     let data;
     let query = sql`UPDATE games SET booked = true WHERE name = ${name}`;
     try {
@@ -39,7 +39,7 @@ function Dispo({ booked, name }: { booked: boolean; name: string }) {
         throw e;
       }
     }
-  };}>Book</button>;
+  };}>Book</button></>);
   }
 }
 
