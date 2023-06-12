@@ -25,9 +25,8 @@ function Dispo({ booked, name }: { booked: boolean; name: string }) {
     return (<><button type="button" onClick={async () => {
     let data;
     let query = sql`UPDATE games SET booked = true WHERE name = ${name}`;
-    try {
-      data = await query;
-    } catch (e: any) {
+    try {data = await query;}
+    catch (e: any) {
       if (e.message === `relation "games" does not exist`) {
         console.log(
           'Table does not exist, creating and seeding it with dummy data now...'
@@ -35,11 +34,9 @@ function Dispo({ booked, name }: { booked: boolean; name: string }) {
         // Table is not created yet
         await seed();
         data = await query;
-      } else {
-        throw e;
-      }
+      } else {throw e;}
     }
-  };}>Book</button></>);
+  }}>Book</button></>);
   }
 }
 
