@@ -99,7 +99,7 @@ align-items: inherit;
 	align-items: center;
 	margin: 5px 0px;
 	background: #3F89DD;
-	cursor: pointer;
+	/*cursor: pointer;*/
 }
 
 .catcard2 {
