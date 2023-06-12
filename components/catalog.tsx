@@ -7,6 +7,9 @@ import { seed } from '@/lib/seed';
 import Image from 'next/image';
 import style from '@/app/page.module.css';
 
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 function Imag({ url }: { url: string }) {
   if (url === '') {
     return <div></div>;
