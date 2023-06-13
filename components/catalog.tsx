@@ -5,7 +5,7 @@ import React from 'react';
 import { seed } from '@/lib/seed';
 import Image from 'next/image';
 import style from '@/app/page.module.css';
-import useSWR from 'swr'
+import useSWR from 'swr';
 
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
