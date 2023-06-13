@@ -18,7 +18,7 @@ function Imag({ url }: { url: string }) {
   }
 }
 
-function Dispo({ booked, bid }: { booked: boolean; bid: float }) {
+function Dispo({ booked, bid }: { booked: boolean; bid: int }) {
   
   if (booked) {
     return <button type="button" disabled>Already booked</button>;
