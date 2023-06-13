@@ -23,7 +23,7 @@ function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
   if (booked) {
     return <button type="button" disabled>Already booked</button>;
   } else {
-    return (<><button type="button" onClick={async () => {
+    return (<button type="button" onClick={async () => {
             const user = await prisma.games.findUnique({where: {id: bid,},});
             if (user !== null) {
           user.booked = true;
@@ -31,7 +31,7 @@ function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
             where: { id: user.id },
             data: { name: user.name },
           });
-          }}>Book</button></>);
+          }}>Book</button>;);
   }
 }
 
