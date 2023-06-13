@@ -20,7 +20,10 @@ const prisma = new PrismaClient()
 
 function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
   async function handler() {
-    const { data, error } = useSWR('/api/bookbutt', fetcher)
+    const queryParams = {
+    id: bid,
+  };
+    const { data, error } = useSWR('/api/bookbutt?${new URLSearchParams(queryParams).toString()}', fetcher)}
   if (error) return <div>An error occured.</div>
   if (!data) return <div>Loading </div>
   }
