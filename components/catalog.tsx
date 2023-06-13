@@ -45,14 +45,12 @@ export default async function Catalog() {
    const connectionString = "Server=ep-proud-field-232095-pooler.us-east-1.postgres.vercel-storage.com;Database=verceldb;User Id=default;Password=oTM3KYNDsWk5;";
       let data;
 
-      const users = await prisma.games.findMany();
-
-      const { rows: games } = users;
+      const gamelist = await prisma.games.findMany();
  
   return (
     <div className={style.catdiv}>
       <p className={style.bigtxt}>Catalog</p>
-      {games.map((game: any) => (
+      {gamelist.map((game: any) => (
         <div key={game.name} className={style.catcard1}>
           <Imag url={game.img} />
           <div className={style.catcard2}>
