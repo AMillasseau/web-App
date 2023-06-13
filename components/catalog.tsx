@@ -1,5 +1,5 @@
 // Table Client Component
-
+ 
 "use client";
 import React from 'react';
 import { sql } from '@vercel/postgres';
