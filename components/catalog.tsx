@@ -18,26 +18,46 @@ const prisma = new PrismaClient()
   }
 }
 
+async function fetcher(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error('An error occurred while fetching the data.');
+  }
+  return response.json();
+}
+
 function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
-  async function useHandler() {
-    const queryParams = {
+  const queryParams = {
     id: bid,
   };
-    const { data, error } = useSWR('/api/bookbutt?${new URLSearchParams(queryParams).toString()}', fetch)
-  if (error) return <div>An error occured.</div>
-  if (!data) return <div>Loading </div>
-  }
 
-  if (booked) {
-    return <button type="button" disabled>Already booked</button>;
-  } else {
-    return (
-      <div>
-        <button type="button" onClick={useHandler()}>Book</button>
-      </div>
-    );
-  }
+  const url = `/api/bookbutt?${new URLSearchParams(queryParams).toString()}`;
+
+  const handleClick = async () => {
+    if (booked) return;
+    try {
+      await fetch(url, { method: 'POST' });
+      // Handle successful booking
+    } catch (error) {
+      // Handle error
+    }
+  };
+
+  return (
+    <div>
+      {booked ? (
+        <button type="button" disabled>
+          Already booked
+        </button>
+      ) : (
+        <button type="button" onClick={handleClick}>
+          Book
+        </button>
+      )}
+    </div>
+  );
 }
+
 
 export default async function Catalog() { 
    const connectionString = "Server=ep-proud-field-232095-pooler.us-east-1.postgres.vercel-storage.com;Database=verceldb;User Id=default;Password=oTM3KYNDsWk5;";
