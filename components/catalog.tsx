@@ -28,7 +28,7 @@ async function fetcher(url : string) {
 
 function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
   const queryParams = {
-    id: bid,
+    id: bid.toString(),
   };
 
   const url = `/api/bookbutt?${new URLSearchParams(queryParams).toString()}`;
