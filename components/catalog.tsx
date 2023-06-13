@@ -19,7 +19,7 @@ const prisma = new PrismaClient()
 }
 
 function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
-  async function handler() {
+  async function useHandler() {
     const queryParams = {
     id: bid,
   };
