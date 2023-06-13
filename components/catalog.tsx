@@ -10,7 +10,9 @@ import style from '@/app/page.module.css';
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
-function Imag({ url }: { url: string }) {
+export default async function Catalog() {
+ 
+ function Imag({ url }: { url: string }) {
   if (url === '') {
     return <div></div>;
   } else {
@@ -35,18 +37,14 @@ function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
   }
 }
 
-
-export default async function Table() {
+ 
    const connectionString = "Server=ep-proud-field-232095-pooler.us-east-1.postgres.vercel-storage.com;Database=verceldb;User Id=default;Password=oTM3KYNDsWk5;";
       let data;
 
       const users = await prisma.games.findMany();
 
       const { rows: games } = users;
-      
-    
-
-
+ 
   return (
     <div className={style.catdiv}>
       <p className={style.bigtxt}>Catalog</p>
