@@ -12,4 +12,5 @@ export default async function handle(req, res) {
         data: { name: user.name },
       });
     res.json(bid)
+    }
 }
