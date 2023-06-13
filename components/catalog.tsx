@@ -25,8 +25,12 @@ function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
   } else {
     return (<><button type="button" onClick={async () => {
             const user = await prisma.games.findUnique({where: {id: bid,},});
-            user.booked = true;
-            const updatedUser = await prisma.games.update({where: {id: user.id,},data: {name: user.name,},});
+            if (user !== null) {
+          user.booked = true;
+          const updatedUser = await prisma.games.update({
+            where: { id: user.id },
+            data: { name: user.name },
+          });
           }}>Book</button></>);
   }
 }
