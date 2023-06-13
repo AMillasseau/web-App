@@ -19,7 +19,7 @@ function Imag({ url }: { url: string }) {
 }
 
 function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
-  async function handler() = {
+  async function handler() {
             const user = await prisma.games.findUnique({where: {id: bid,},});
             if (user !== null) {
           user.booked = true;
