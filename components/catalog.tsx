@@ -55,7 +55,7 @@ export default async function Catalog() {
           <Imag url={game.img} />
           <div className={style.catcard2}>
             <p>{game.name}</p>
-            <><Dispo booked={game.booked} name={game.id} /></>
+            <><Dispo booked={game.booked} bid={game.id} /></>
             <p>{game.description}</p>
           </div>
         </div>
