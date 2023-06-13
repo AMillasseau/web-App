@@ -33,7 +33,7 @@ function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
   } else {
     return (
       <div>
-        <button type="button" onClick={handler}>Book</button>
+        <button type="button" onClick={useHandler()}>Book</button>
       </div>
     );
   }
