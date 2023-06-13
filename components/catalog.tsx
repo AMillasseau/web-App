@@ -2,10 +2,10 @@
  
 "use client";
 import React from 'react';
-import { sql } from '@vercel/postgres';
 import { seed } from '@/lib/seed';
 import Image from 'next/image';
 import style from '@/app/page.module.css';
+import useSWR from 'swr'
 
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
@@ -20,14 +20,9 @@ const prisma = new PrismaClient()
 
 function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
   async function handler() {
-    const user = await prisma.games.findUnique({ where: { id: bid } });
-    if (user !== null) {
-      user.booked = true;
-      const updatedUser = await prisma.games.update({
-        where: { id: user.id },
-        data: { name: user.name },
-      });
-    }
+    const { data, error } = useSWR('/api/bookbutt', fetcher)
+  if (error) return <div>An error occured.</div>
+  if (!data) return <div>Loading </div>
   }
 
   if (booked) {
@@ -43,10 +38,11 @@ function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
 
 export default async function Catalog() { 
    const connectionString = "Server=ep-proud-field-232095-pooler.us-east-1.postgres.vercel-storage.com;Database=verceldb;User Id=default;Password=oTM3KYNDsWk5;";
-      let data;
-
-      const gamelist = await prisma.games.findMany();
- 
+  
+ const { data, error } = useSWR('/api/games', fetcher)
+  if (error) return <div>An error occured.</div>
+  if (!data) return <div>Loading </div>
+ const gamelist = data.gamelist;
   return (
     <div className={style.catdiv}>
       <p className={style.bigtxt}>Catalog</p>
