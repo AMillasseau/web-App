@@ -9,3 +9,28 @@ datasource db {
   shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model games {
+  name        String?  @db.VarChar(100)
+  booked      Boolean?
+  description String?  @db.VarChar(200)
+  img         String?  @db.VarChar(1000)
+  id      Int     @id @default(autoincrement())
+
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model messages {
+  name    String? @db.VarChar(100)
+  contact String? @db.VarChar(100)
+  message String? @db.VarChar(300)
+  id      Int     @id @default(autoincrement())
+}
+
+model users {
+  id        Int       @id @default(autoincrement())
+  name      String    @db.VarChar(255)
+  email     String    @unique @db.VarChar(255)
+  image     String?   @db.VarChar(255)
+  createdAt DateTime? @default(now()) @db.Timestamptz(6)
+}
