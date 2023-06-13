@@ -23,7 +23,7 @@ function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
     const queryParams = {
     id: bid,
   };
-    const { data, error } = useSWR('/api/bookbutt?${new URLSearchParams(queryParams).toString()}', fetcher)}
+    const { data, error } = useSWR('/api/bookbutt?${new URLSearchParams(queryParams).toString()}', fetcher)
   if (error) return <div>An error occured.</div>
   if (!data) return <div>Loading </div>
   }
