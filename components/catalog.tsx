@@ -65,10 +65,11 @@ export default async function Catalog() {
  const { data, error } = useSWR('/api/games', fetch)
   if (error) return <div>An error occured.</div>
   if (!data) return <div>Loading </div>
-  if (!data.hasOwnProperty('gamelist')) {
-    return <div>Invalid data format.</div>;
+  if (Array.isArray(data.json())) {
+    const gamelist = data.json();
   }
- const gamelist = data.json();
+else {return <p> Invalid data </p>)
+ 
   return (
     <div className={style.catdiv}>
       <p className={style.bigtxt}>Catalog</p>
