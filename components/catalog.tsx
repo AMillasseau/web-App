@@ -60,20 +60,20 @@ function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
 
 export async function getStaticProps() {
   const prisma = new PrismaClient()
-  const gamelist = await prisma.games.findMany()
+  const prop = await prisma.games.findMany()
 
   return {
-    props: gamelist,
+    props: prop,
   };
 }
 
-export default async function Catalog({gamelist}: {gamelist :any}) { 
-   const connectionString = "Server=ep-proud-field-232095-pooler.us-east-1.postgres.vercel-storage.com;Database=verceldb;User Id=default;Password=oTM3KYNDsWk5;";
-  const data = gamelist || {};
+export default async function Catalog({prop}: {prop :any}) { 
+  
+  const gamelist = await prop;
   return (
     <div className={style.catdiv}>
       <p className={style.bigtxt}>Catalog</p>
-      {data.map((game: any) => (
+      {gamelist.map((game: any) => (
         <div key={game.name} className={style.catcard1}>
           <Imag url={game.img} />
           <div className={style.catcard2}>
