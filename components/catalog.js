@@ -67,9 +67,17 @@ export async function getStaticProps() {
   };
 }
 
-export default async function Catalog({prop}) { 
-  
-  const gamelist = await prop;
+export default async function Catalog() { 
+  const url = `/api/gamelist`;
+
+    try {
+      let gamelist = await fetch(url, { method: 'POST' });
+      
+    } catch (error) {
+      return (<p>Error</p>)
+    }
+  };
+
   return (
     <div className={style.catdiv}>
       <p className={style.bigtxt}>Catalog</p>
