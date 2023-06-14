@@ -10,7 +10,7 @@ import useSWR from 'swr';
 import { PrismaClient } from '@prisma/client'
 
 
- function Imag({ url }: { url: string }) {
+ function Imag({ url }) {
   if (url === '') {
     return <div></div>;
   } else {
@@ -18,7 +18,7 @@ import { PrismaClient } from '@prisma/client'
   }
 }
 
-async function fetcher(url : string) {
+async function fetcher(url) {
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error('An error occurred while fetching the data.');
@@ -26,7 +26,7 @@ async function fetcher(url : string) {
   return response.json();
 }
 
-function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
+function Dispo({ booked, bid }) {
   const queryParams = {
     id: bid.toString(),
   };
@@ -73,7 +73,7 @@ export default async function Catalog({prop}) {
   return (
     <div className={style.catdiv}>
       <p className={style.bigtxt}>Catalog</p>
-      {gamelist.map((game: any) => (
+      {gamelist.map((game) => (
         <div key={game.name} className={style.catcard1}>
           <Imag url={game.img} />
           <div className={style.catcard2}>
