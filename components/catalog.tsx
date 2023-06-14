@@ -68,7 +68,7 @@ export default async function Catalog() {
   if (!data.hasOwnProperty('gamelist')) {
     return <div>Invalid data format.</div>;
   }
- const gamelist = data.gamelist;
+ const gamelist = data;
   return (
     <div className={style.catdiv}>
       <p className={style.bigtxt}>Catalog</p>
