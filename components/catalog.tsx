@@ -66,7 +66,7 @@ export default async function Catalog() {
   if (error) return <div>An error occured.</div>
   if (!data) return <div>Loading </div>
   
-    const gamelist = data.json().toArray();
+    const gamelist = data.gamelist;
 
  
   return (
