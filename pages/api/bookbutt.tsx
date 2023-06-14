@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
-export default async function handle(req, res) {
+export default async function handle(req : any, res : any) {
     const data = req.query;
     const bid = data.id;
     const user = await prisma.games.findUnique({ where: { id: bid } });
