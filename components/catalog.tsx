@@ -65,10 +65,9 @@ export default async function Catalog() {
  const { data, error } = useSWR('/api/games', fetch)
   if (error) return <div>An error occured.</div>
   if (!data) return <div>Loading </div>
-  if (Array.isArray(data.json())) {
+  
     const gamelist = data.json();
-  }
-else {const gamelist = [];}
+
  
   return (
     <div className={style.catdiv}>
