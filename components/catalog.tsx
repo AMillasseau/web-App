@@ -62,7 +62,7 @@ function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
 export default async function Catalog() { 
    const connectionString = "Server=ep-proud-field-232095-pooler.us-east-1.postgres.vercel-storage.com;Database=verceldb;User Id=default;Password=oTM3KYNDsWk5;";
   
- const { data, error } = useSWR('/api/games', fetch)
+ const { data, error } = useSWR('/api/gamelist', fetch)
   if (error) return <div>An error occured.</div>
   if (!data) return <div>Loading </div>
   
