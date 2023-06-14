@@ -68,7 +68,7 @@ export default async function Catalog() {
   if (Array.isArray(data.json())) {
     const gamelist = data.json();
   }
-else {return <p> Invalid data </p>)
+else {return <p> Invalid data </p>;}
  
   return (
     <div className={style.catdiv}>
