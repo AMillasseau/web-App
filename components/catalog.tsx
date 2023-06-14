@@ -8,7 +8,7 @@ import style from '@/app/page.module.css';
 import useSWR from 'swr';
 
 import { PrismaClient } from '@prisma/client'
-const prisma = new PrismaClient()
+
 
  function Imag({ url }: { url: string }) {
   if (url === '') {
