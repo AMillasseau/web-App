@@ -67,7 +67,7 @@ export async function getStaticProps() {
   };
 }
 
-export default async function Catalog({prop}: {prop :any}) { 
+export default async function Catalog({prop}) { 
   
   const gamelist = await prop;
   return (
