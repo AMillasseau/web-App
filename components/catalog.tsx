@@ -62,15 +62,13 @@ export async function getStaticProps() {
   const prisma = new PrismaClient()
   const gamelist = await prisma.games.findMany()
 
-  return gamelist
+  return {
+    props: gamelist,
+  };
 }
 
-export default async function Catalog() { 
+export default async function Catalog({gamelist}: {gamelist :any}) { 
    const connectionString = "Server=ep-proud-field-232095-pooler.us-east-1.postgres.vercel-storage.com;Database=verceldb;User Id=default;Password=oTM3KYNDsWk5;";
-  
-  
-  const gamelist = await getStaticProps();
-
  
   return (
     <div className={style.catdiv}>
