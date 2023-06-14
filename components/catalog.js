@@ -35,12 +35,9 @@ function Dispo({ booked, bid }) {
 
   const handleClick = async () => {
     if (booked) return;
-    try {
-      await fetch(url, { method: 'POST' });
-      // Handle successful booking
-    } catch (error) {
-      // Handle error
-    }
+    
+    const { data, error } = useSWR(url, fetcher)
+    
   };
 
   return (
@@ -69,13 +66,8 @@ export async function getStaticProps() {
 
 export default async function Catalog() { 
   const url = `/api/gamelist`;
-
-    try {
-      let gamelist = await fetch(url, { method: 'POST' });
-      
-    } catch (error) {
-      return (<p>Error</p>)
-    }
+  
+  const { gamelist, error } = useSWR(url, fetcher)
   
 
   return (
