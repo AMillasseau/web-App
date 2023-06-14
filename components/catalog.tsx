@@ -58,15 +58,18 @@ function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
   );
 }
 
+export async function getStaticProps() {
+  const prisma = new PrismaClient()
+  const gamelist = await prisma.games.findMany()
+
+  return gamelist
+}
 
 export default async function Catalog() { 
    const connectionString = "Server=ep-proud-field-232095-pooler.us-east-1.postgres.vercel-storage.com;Database=verceldb;User Id=default;Password=oTM3KYNDsWk5;";
   
   
-  const gamelist = await prisma.games.findMany();
-
-  return gamelist;
-  
+  const gamelist = await getStaticProps();
 
  
   return (
