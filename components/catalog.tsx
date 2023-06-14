@@ -69,11 +69,11 @@ export async function getStaticProps() {
 
 export default async function Catalog({gamelist}: {gamelist :any}) { 
    const connectionString = "Server=ep-proud-field-232095-pooler.us-east-1.postgres.vercel-storage.com;Database=verceldb;User Id=default;Password=oTM3KYNDsWk5;";
- 
+  const data = gamelist || {};
   return (
     <div className={style.catdiv}>
       <p className={style.bigtxt}>Catalog</p>
-      {gamelist.map((game: any) => (
+      {data.map((game: any) => (
         <div key={game.name} className={style.catcard1}>
           <Imag url={game.img} />
           <div className={style.catcard2}>
