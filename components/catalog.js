@@ -76,7 +76,7 @@ export default async function Catalog() {
     } catch (error) {
       return (<p>Error</p>)
     }
-  };
+  
 
   return (
     <div className={style.catdiv}>
