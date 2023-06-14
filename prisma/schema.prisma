@@ -5,11 +5,11 @@ generator client {
 datasource db {
   provider          = "postgresql"
   url               = env("POSTGRES_PRISMA_URL")
-  directUrl         = env("POSTGRES_URL_NON_POOLING")
-  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING")
+  directUrl         = env("NEXT_PUBLIC_POSTGRES_URL_NON_POOLING")
+  shadowDatabaseUrl = env("NEXT_PUBLIC_POSTGRES_URL_NON_POOLING")
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+
 model games {
   name        String?  @db.VarChar(100)
   booked      Boolean?
@@ -19,7 +19,7 @@ model games {
 
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+
 model messages {
   name    String? @db.VarChar(100)
   contact String? @db.VarChar(100)
