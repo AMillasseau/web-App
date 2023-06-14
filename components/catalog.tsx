@@ -18,34 +18,57 @@ const prisma = new PrismaClient()
   }
 }
 
-function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
-  async function handler() {
-    const queryParams = {
-    id: bid,
-  };
-    const { data, error } = useSWR('/api/bookbutt?${new URLSearchParams(queryParams).toString()}', fetcher)
-  if (error) return <div>An error occured.</div>
-  if (!data) return <div>Loading </div>
+async function fetcher(url : string) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error('An error occurred while fetching the data.');
   }
-
-  if (booked) {
-    return <button type="button" disabled>Already booked</button>;
-  } else {
-    return (
-      <div>
-        <button type="button" onClick={handler}>Book</button>
-      </div>
-    );
-  }
+  return response.json();
 }
+
+function Dispo({ booked, bid }: { booked: boolean; bid: number }) {
+  const queryParams = {
+    id: bid.toString(),
+  };
+
+  const url = `/api/bookbutt?${new URLSearchParams(queryParams).toString()}`;
+
+  const handleClick = async () => {
+    if (booked) return;
+    try {
+      await fetch(url, { method: 'POST' });
+      // Handle successful booking
+    } catch (error) {
+      // Handle error
+    }
+  };
+
+  return (
+    <div>
+      {booked ? (
+        <button type="button" disabled>
+          Already booked
+        </button>
+      ) : (
+        <button type="button" onClick={handleClick}>
+          Book
+        </button>
+      )}
+    </div>
+  );
+}
+
 
 export default async function Catalog() { 
    const connectionString = "Server=ep-proud-field-232095-pooler.us-east-1.postgres.vercel-storage.com;Database=verceldb;User Id=default;Password=oTM3KYNDsWk5;";
   
- const { data, error } = useSWR('/api/games', fetcher)
+ const { data, error } = useSWR('/api/gamelist', fetch)
   if (error) return <div>An error occured.</div>
   if (!data) return <div>Loading </div>
- const gamelist = data.gamelist;
+  
+    const gamelist = data.gamelist;
+
+ 
   return (
     <div className={style.catdiv}>
       <p className={style.bigtxt}>Catalog</p>
