@@ -52,17 +52,25 @@ function Dispo({ booked, bid }) {
   );
 }
 
-export async function getStaticProps() {
-  const prisma = new PrismaClient()
-  const gamelist = await prisma.games.findMany()
 
-  return {
-    props : { gamelist }
-  }
-}
 
 export default async function Catalog({gamelist}) { 
+  let data
+  try {
+    data = await sql`SELECT * FROM games`
+  } catch (e: any) {
+    if (e.message === `relation "games" does not exist`) {
+      console.log(
+        'Table does not exist, creating and seeding it with dummy data now...'
+      )
+      data = await sql`SELECT * FROM games`
+    } else {
+      throw e
+    }
+  }
 
+  const { rows: gamelist } = data
+  
   return (
     <div className={style.catdiv}>
       <p className={style.bigtxt}>Catalog</p>
