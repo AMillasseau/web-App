@@ -54,7 +54,7 @@ function Dispo({ booked, bid }) {
 
 
 
-export default async function Catalog({gamelist}) { 
+export default async function Catalog() { 
   let data
   try {
     data = await sql`SELECT * FROM games`
