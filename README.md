@@ -3,7 +3,7 @@
 
 ## Goal
 
-This project aims to maje a small and simple catalog for a board game association which wishes to borrow some of their games.
+This project aims to make a small and simple catalog for a board game association which wishes to borrow some of their games.
 
 ## Methods
 
