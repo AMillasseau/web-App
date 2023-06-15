@@ -52,14 +52,17 @@ function Dispo({ booked, bid }) {
   );
 }
 
+export async function getStaticProps() {
+  const prisma = new PrismaClient()
+  const gamelist = await prisma.games.findMany()
 
-export default async function Catalog() { 
-  const url = `/api/gamelist`;
+  return {
+    props : { gamelist }
+  }
+}
 
-  const prisma = new PrismaClient();
-  
-  const gamelist = await prisma.games.findMany();
-  
+export default async function Catalog({gamelist}) { 
+  const url = `/api/gamelist`; 
 
   return (
     <div className={style.catdiv}>
