@@ -1,11 +1,9 @@
 // Table Client Component
  
 import React from 'react';
-import { seed } from '@/lib/seed';
 import Image from 'next/image';
 import style from '@/app/page.module.css';
-import useSWR from 'swr';
-import prisma from '@/lib/prisma'
+
 import { PrismaClient } from '@prisma/client'
 
 
@@ -54,19 +52,13 @@ function Dispo({ booked, bid }) {
   );
 }
 
-export async function getStaticProps() {
-  const prisma = new PrismaClient()
-  const prop = await prisma.games.findMany()
-
-  return {
-    props: prop,
-  };
-}
 
 export default async function Catalog() { 
   const url = `/api/gamelist`;
+
+  const prisma = new PrismaClient();
   
-  const gamelist = await prisma.games.findMany()
+  const gamelist = await prisma.games.findMany();
   
 
   return (
