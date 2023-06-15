@@ -1,57 +1,21 @@
----
-name: Vercel Postgres Next.js Starter
-slug: postgres-starter
-description: Simple Next.js template that uses Vercel Postgres as the database.
-framework: Next.js
-useCase: Starter
-css: Tailwind
-database: Vercel Postgres
-deployUrl: https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fstorage%2Fpostgres-starter&project-name=postgres-starter&repository-name=postgres-starter&demo-title=Vercel%20Postgres%20Next.js%20Starter&demo-description=Simple%20Next.js%20template%20that%20uses%20Vercel%20Postgres%20as%20the%20database.&demo-url=https%3A%2F%2Fpostgres-starter.vercel.app%2F&demo-image=https%3A%2F%2Fpostgres-starter.vercel.app%2Fopengraph-image.png&stores=%5B%7B"type"%3A"postgres"%7D%5D
-demoUrl: https://postgres-starter.vercel.app/
-relatedTemplates:
-  - postgres-prisma
-  - postgres-kysely
-  - postgres-sveltekit
----
 
-# Vercel Postgres Next.js Starter
+# Board Game Catalog
 
-Simple Next.js template that uses [Vercel Postgres](https://vercel.com/postgres) as the database.
+## Goal
 
-## Demo
+This project aims to maje a small and simple catalog for a board game association which wishes to borrow some of their games.
 
-https://postgres-starter.vercel.app/
+## Methods
 
-## How to Use
+To make this application, I used the framework Next.js from Vercel to make and host the site and I associate it with a Postgres database for the data storing.
+The majority of the code is made in Javascript and Typescript.
 
-You can choose from one of the following two methods to use this repository:
+## Architecture
 
-### One-Click Deploy
+The application is structured around the main page, the catalog. This first page read the informations of the games from the database, the list indicates which games are available and via a button permits users to send a request to borrow a game.
+A page "Credits" is accesible from the bottom of the site and contains informations about the association and the application.
+The last page "Ask us" contains a little form to send messages which will be stored in the database.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fstorage%2Fpostgres-starter&project-name=postgres-starter&repository-name=postgres-starter&demo-title=Vercel%20Postgres%20Next.js%20Starter&demo-description=Simple%20Next.js%20template%20that%20uses%20Vercel%20Postgres%20as%20the%20database.&demo-url=https%3A%2F%2Fpostgres-starter.vercel.app%2F&demo-image=https%3A%2F%2Fpostgres-starter.vercel.app%2Fopengraph-image.png&stores=%5B%7B"type"%3A"postgres"%7D%5D)
 
-### Clone and Deploy
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
-
-```bash
-pnpm create next-app --example https://github.com/vercel/examples/tree/main/storage/postgres-starter
-```
-
-Once that's done, copy the .env.example file in this directory to .env.local (which will be ignored by Git):
-
-```bash
-cp .env.example .env.local
-```
-
-Then open `.env.local` and set the environment variables to match the ones in your Vercel Storage Dashboard.
-
-Next, run Next.js in development mode:
-
-```bash
-pnpm dev
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples) ([Documentation](https://nextjs.org/docs/deployment)).
