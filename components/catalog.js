@@ -1,12 +1,11 @@
 // Table Client Component
  
-"use client";
 import React from 'react';
 import { seed } from '@/lib/seed';
 import Image from 'next/image';
 import style from '@/app/page.module.css';
 import useSWR from 'swr';
-
+import prisma from '@/lib/prisma'
 import { PrismaClient } from '@prisma/client'
 
 
@@ -17,7 +16,7 @@ import { PrismaClient } from '@prisma/client'
     return <Image alt="" src={url} height={100} />;
   }
 }
-
+/*
 async function fetcher(url) {
   const response = await fetch(url);
   if (!response.ok) {
@@ -25,9 +24,9 @@ async function fetcher(url) {
   }
   return response.json();
 }
-
+*/
 function Dispo({ booked, bid }) {
-  const queryParams = {
+  /*const queryParams = {
     id: bid.toString(),
   };
 
@@ -38,7 +37,7 @@ function Dispo({ booked, bid }) {
     
     const { data, error } = useSWR(url, fetcher)
     
-  };
+  };*/
 
   return (
     <div>
@@ -47,7 +46,7 @@ function Dispo({ booked, bid }) {
           Already booked
         </button>
       ) : (
-        <button type="button" onClick={handleClick}>
+        <button type="button">
           Book
         </button>
       )}
@@ -67,7 +66,7 @@ export async function getStaticProps() {
 export default async function Catalog() { 
   const url = `/api/gamelist`;
   
-  const { gamelist, error } = useSWR(url, fetcher)
+  const gamelist = await prisma.games.findMany()
   
 
   return (
