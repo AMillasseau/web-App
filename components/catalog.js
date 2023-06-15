@@ -58,13 +58,13 @@ function Dispo({ booked, bid }) {
 export default async function Catalog() { 
   let data
   try {
-    data = await sql`SELECT * FROM games`
+    data = await sql`SELECT * FROM games ORDER BY id`
   } catch (e) {
     if (e.message === `relation "games" does not exist`) {
       console.log(
         'Table does not exist, creating and seeding it with dummy data now...'
       )
-      data = await sql`SELECT * FROM games`
+      data = await sql`SELECT * FROM games ORDER BY id`
     } else {
       throw e
     }
