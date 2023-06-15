@@ -46,7 +46,7 @@ export default async function Requester() {
           <input className={style.ipt} id="name" name="name" type="text" placeholder="Name" autoComplete="off" required/>
           <input className={style.ipt} id="contact" name="contact" type="email" placeholder="Email contact" required/>
           <textarea className={style.txta} id="message" name="text" placeholder="Your message" autoComplete="off" rows={12} required></textarea>
-      <form action="/ask">
+      <form action="/">
   <button
   className={style.btn}
   id="btn"
