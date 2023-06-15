@@ -62,7 +62,6 @@ export async function getStaticProps() {
 }
 
 export default async function Catalog({gamelist}) { 
-  const url = `/api/gamelist`; 
 
   return (
     <div className={style.catdiv}>
