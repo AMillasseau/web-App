@@ -49,14 +49,14 @@ export default async function Requester() {
   <button
   className={style.btn}
   id="btn"
-  onClick={() => {
+  /*onClick={() => {
     const nameInput = document.getElementById('name');
     const contactInput = document.getElementById('contact');
     const messageInput = document.getElementById('message');
 
     if (nameInput && contactInput && messageInput) {
       send(nameInput.innerHTML, contactInput.innerHTML, messageInput.innerHTML);
-    }
+    }*/
   }}
 >
   Submit
