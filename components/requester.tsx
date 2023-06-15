@@ -56,8 +56,8 @@ export default async function Requester() {
 
     if (nameInput && contactInput && messageInput) {
       send(nameInput.innerHTML, contactInput.innerHTML, messageInput.innerHTML);
-    }*/
-  }}
+    }
+  }}*/
 >
   Submit
 </button>
