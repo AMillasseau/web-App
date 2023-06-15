@@ -58,7 +58,7 @@ export default async function Catalog({gamelist}) {
   let data
   try {
     data = await sql`SELECT * FROM games`
-  } catch (e: any) {
+  } catch (e) {
     if (e.message === `relation "games" does not exist`) {
       console.log(
         'Table does not exist, creating and seeding it with dummy data now...'
